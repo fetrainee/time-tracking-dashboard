@@ -155,3 +155,30 @@ body {
     position: relative;
     z-index: 1;
 }
+
+.activity-card__title {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: var(--font-weight-medium);
+    line-height: 21px;
+}
+
+.activity-card__stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activity-card__current-stats {
+    color: var(--color-white);
+    font-size: 32px;
+    font-weight: var(--font-weight-light);
+    line-height: 38px;
+}
+
+.activity-card__previous-stats {
+    color: var(--color-navy-200);
+    font-size: 15px;
+    font-weight: var(--font-weight-regular);
+    line-height: 18px;
+}
