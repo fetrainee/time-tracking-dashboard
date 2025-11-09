@@ -115,4 +115,34 @@ body {
 .timeframe-selector__option {
     flex: 1;
     text-align: center;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.activity-card {
+    width: 100%;
+    background-color: var(--color-orange-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.activity-card::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: -10px;
+    right: 20px;
+    background-image: url('./images/icon-work.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
 }

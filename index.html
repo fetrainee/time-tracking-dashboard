@@ -11,7 +11,7 @@
 </head>
 <body>
 <main class="dashboard">
-    <section class="user-section">
+    <aside class="user-section">
         <div class="user-profile">
             <img class="user-profile__image" src="./images/image-jeremy.png" alt="user profile picture">
             <div class="user-profile__info">
@@ -19,12 +19,21 @@
                 <h1 class="user-profile__name">Jeremy Robson</h1>
             </div>
         </div>
-        <div class="timeframe-selector">
-            <p class="timeframe-selector__option">Daily</p>
-            <p class="timeframe-selector__option">Weekly</p>
-            <p class="timeframe-selector__option">Monthly</p>
+        <nav class="timeframe-selector" aria-label="Time period selector">
+            <button class="timeframe-selector__option">Daily</button>
+            <button class="timeframe-selector__option">Weekly</button>
+            <button class="timeframe-selector__option">Monthly</button>
+        </nav>
+    </aside>
+    <article class="activity-card">
+        <div class="activity-card__content">
+            <h2 class="activity-card__title">Work</h2>
+            <div class="activity-card__stats">
+                <span>32hrs</span>
+                <span>Last Week - 36hrs</span>
+            </div>
         </div>
-    </section>
+    </article>
 </main>
 </body>
 </html>
