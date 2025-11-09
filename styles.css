@@ -146,3 +146,10 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.activity-card__content {
+    margin-top: var(--spacing-400);
+    padding: var(--spacing-300);
+    background-color: var(--color-navy-900);
+    width: 100%;
+}
