@@ -49,13 +49,18 @@ body {
     letter-spacing: 0;
 }
 
+main {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
 .user-section {
     background-color: var(--color-navy-900);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: var(--spacing-300);
+    /*gap: var(--spacing-300);*/
     border-radius: 15px;
 }
 
@@ -93,4 +98,17 @@ body {
     display: flex;
     gap: var(--spacing-100);
     flex-direction: column;
+}
+
+.timeframe-selector {
+    display: flex;
+    width: 100%;
+    color: var(--color-purple-500);
+    padding-top: var(--spacing-300);
+    padding-bottom: var(--spacing-300);
+}
+
+.selector {
+    flex: 1;
+    text-align: center;
 }
