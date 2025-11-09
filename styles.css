@@ -50,8 +50,13 @@ body {
 }
 
 .dashboard {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-300);
+    height: 100vh;
 }
 
 .user-section {
@@ -60,7 +65,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /*gap: var(--spacing-300);*/
     border-radius: 15px;
 }
 
