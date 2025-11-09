@@ -51,11 +51,22 @@ body {
 
 .user-section {
     background-color: var(--color-navy-900);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-300);
+    border-radius: 15px;
 }
 
 .user-profile {
     padding: var(--spacing-400);
     background-color: var(--color-purple-600);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-300);
+    border-radius: 15px;
 }
 
 .user-profile_image {
@@ -74,6 +85,12 @@ body {
 .user-name {
     color: var(--color-white);
     font-size: 24px;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-light);
     line-height: 28px;
+}
+
+.user-info {
+    display: flex;
+    gap: var(--spacing-100);
+    flex-direction: column;
 }
