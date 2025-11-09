@@ -49,7 +49,7 @@ body {
     letter-spacing: 0;
 }
 
-main {
+.dashboard {
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -74,27 +74,27 @@ main {
     border-radius: 15px;
 }
 
-.user-profile_image {
+.user-profile__image {
     width: 64px;
     height: 64px;
     border-radius: 50%;
 }
 
-.lead {
+.user-profile__label {
     color: var(--color-navy-200);
     font-size: 15px;
     font-weight: var(--font-weight-light);
     line-height: 18px;
 }
 
-.user-name {
+.user-profile__name {
     color: var(--color-white);
     font-size: 24px;
     font-weight: var(--font-weight-light);
     line-height: 28px;
 }
 
-.user-info {
+.user-profile__info {
     display: flex;
     gap: var(--spacing-100);
     flex-direction: column;
@@ -108,7 +108,7 @@ main {
     padding-bottom: var(--spacing-300);
 }
 
-.selector {
+.timeframe-selector__option {
     flex: 1;
     text-align: center;
 }
