@@ -152,4 +152,6 @@ body {
     padding: var(--spacing-300);
     background-color: var(--color-navy-900);
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
