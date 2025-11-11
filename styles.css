@@ -56,7 +56,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: var(--spacing-300);
-    height: 100vh;
 }
 
 .user-section {
