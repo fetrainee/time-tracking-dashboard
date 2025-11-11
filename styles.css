@@ -125,7 +125,6 @@ body {
 
 .activity-card {
     width: 100%;
-    background-color: var(--color-orange-300);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,6 +134,31 @@ body {
     overflow: hidden;
 }
 
+.activity-card--work {
+    background-color: var(--color-orange-300);
+}
+
+.activity-card--play {
+    background-color: var(--color-blue-300);
+}
+
+.activity-card--study {
+    background-color: var(--color-pink-400);
+}
+
+.activity-card--exercise {
+    background-color: var(--color-green-400);
+}
+
+.activity-card--social {
+    background-color: var(--color-purple-700);
+}
+
+.activity-card--self-care {
+    background-color: var(--color-yellow-300);
+}
+
+
 .activity-card::after {
     content: '';
     position: absolute;
@@ -142,9 +166,32 @@ body {
     height: 78px;
     top: -10px;
     right: 20px;
-    background-image: url('./images/icon-work.svg');
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.activity-card--work::after {
+    background-image: url('./images/icon-work.svg');
+}
+
+.activity-card--play::after {
+    background-image: url('./images/icon-play.svg');
+}
+
+.activity-card--study::after {
+    background-image: url('./images/icon-study.svg');
+}
+
+.activity-card--exercise::after {
+    background-image: url('./images/icon-exercise.svg');
+}
+
+.activity-card--social::after {
+    background-image: url('./images/icon-social.svg');
+}
+
+.activity-card--self-care::after {
+    background-image: url('./images/icon-self-care.svg');
 }
 
 .activity-card__content {
