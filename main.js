@@ -3,7 +3,12 @@ const periodLabels = {
 };
 
 fetch('/data.json')
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
     .then(activities => {
         const container = document.querySelector('.dashboard');
 
@@ -34,4 +39,11 @@ fetch('/data.json')
 
             container.appendChild(card);
         });
+    })
+    .catch(error => {
+        console.error('Error loading activity data:', error);
+        const container = document.querySelector('.dashboard');
+        if (container) {
+            container.innerHTML = '<p style="color: white; text-align: center; padding: 2rem;">Failed to load activity data. Please try again later.</p>';
+        }
     });
