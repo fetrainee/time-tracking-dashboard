@@ -2,6 +2,14 @@ const periodLabels = {
     daily: 'Yesterday', weekly: 'Last Week', monthly: 'Last Month'
 };
 
+const onTimeframeClick = (event) => {
+    const selectedTimeframe = event.target.dataset.value;
+    const options = document.querySelectorAll('.timeframe-selector__option');
+    options.forEach(card => {
+        card.classList.remove('timeframe-selector__option--selected');
+    });
+};
+
 const renderActivities = (activity) => {
     const container = document.querySelector('.dashboard');
     const timeframe = 'daily';
@@ -41,6 +49,9 @@ fetch('/data.json')
     })
     .then(activities => {
         activities.forEach(renderActivities);
+
+        const timeframeOptions = document.querySelectorAll('.timeframe-selector__option');
+        timeframeOptions.forEach(timeframeOption => timeframeOption.addEventListener('click', onTimeframeClick));
     })
     .catch(error => {
         console.error('Error loading activity data:', error);
