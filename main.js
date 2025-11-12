@@ -2,11 +2,22 @@ const periodLabels = {
     daily: 'Yesterday', weekly: 'Last Week', monthly: 'Last Month'
 };
 
-const onTimeframeClick = (event) => {
+const onTimeframeClick = (activities) => (event) => {
     const selectedTimeframe = event.target.dataset.value;
+
     const options = document.querySelectorAll('.timeframe-selector__option');
     options.forEach(card => {
         card.classList.remove('timeframe-selector__option--selected');
+    });
+
+    event.target.classList.add('timeframe-selector__option--selected');
+
+    activities.forEach(activity => {
+        const data = activity.timeframes[selectedTimeframe];
+        const {current, previous} = data;
+        const card = document.querySelector(`[data-activity="${activity.title}"]`);
+        card.querySelector('.activity-card__current-stats').textContent = `${current}hrs`;
+        card.querySelector('.activity-card__previous-stats').textContent = `${periodLabels[selectedTimeframe]} - ${previous}hrs`;
     });
 };
 
@@ -16,7 +27,7 @@ const renderActivities = (activity) => {
     const card = document.createElement('article');
     const activitySlug = activity.title.toLowerCase().replace(/\s+/g, '-');
     card.className = `activity-card activity-card--${activitySlug}`;
-    card.dataset.activity = activitySlug;
+    card.dataset.activity = activity.title;
 
     const data = activity?.timeframes[timeframe];
     const periodLabel = periodLabels[timeframe];
@@ -51,7 +62,7 @@ fetch('/data.json')
         activities.forEach(renderActivities);
 
         const timeframeOptions = document.querySelectorAll('.timeframe-selector__option');
-        timeframeOptions.forEach(timeframeOption => timeframeOption.addEventListener('click', onTimeframeClick));
+        timeframeOptions.forEach(timeframeOption => timeframeOption.addEventListener('click', onTimeframeClick(activities)));
     })
     .catch(error => {
         console.error('Error loading activity data:', error);
