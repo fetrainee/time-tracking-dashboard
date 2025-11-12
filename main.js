@@ -2,27 +2,18 @@ const periodLabels = {
     daily: 'Yesterday', weekly: 'Last Week', monthly: 'Last Month'
 };
 
-fetch('/data.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(activities => {
-        const container = document.querySelector('.dashboard');
+const renderActivities = (activity) => {
+    const container = document.querySelector('.dashboard');
+    const timeframe = 'daily';
+    const card = document.createElement('article');
+    const activitySlug = activity.title.toLowerCase().replace(/\s+/g, '-');
+    card.className = `activity-card activity-card--${activitySlug}`;
+    card.dataset.activity = activitySlug;
 
-        activities.forEach(activity => {
-            const timeframe = 'daily';
-            const card = document.createElement('article');
-            const activitySlug = activity.title.toLowerCase().replace(/\s+/g, '-');
-            card.className = `activity-card activity-card--${activitySlug}`;
-            card.dataset.activity = activitySlug;
+    const data = activity?.timeframes[timeframe];
+    const periodLabel = periodLabels[timeframe];
 
-            const data = activity?.timeframes[timeframe];
-            const periodLabel = periodLabels[timeframe];
-
-            card.innerHTML = `
+    card.innerHTML = `
       <div class="activity-card__content">
         <div class="activity-card__header">
           <h2 class="activity-card__title">${activity.title}</h2>
@@ -31,14 +22,25 @@ fetch('/data.json')
           </button>
         </div>
         <div class="activity-card__stats">
-          <span class="activity-card__current-stats">${data.current}hrs</span>
-          <span class="activity-card__previous-stats">${periodLabel} - ${data.previous}hrs</span>
+          <span class="activity-card__current-stats">${data?.current}hrs</span>
+          <span class="activity-card__previous-stats">${periodLabel} - ${data?.previous}hrs</span>
         </div>
       </div>
-    `;
+        `;
 
-            container.appendChild(card);
-        });
+    container.appendChild(card);
+}
+
+
+fetch('/data.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(activities => {
+        activities.forEach(renderActivities);
     })
     .catch(error => {
         console.error('Error loading activity data:', error);
