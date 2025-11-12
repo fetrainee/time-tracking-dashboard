@@ -122,6 +122,10 @@ body {
     padding: 0;
 }
 
+.timeframe-selector__option--selected {
+    color: var(--color-white);
+}
+
 .activity-card {
     width: 100%;
     display: flex;
