@@ -63,6 +63,9 @@ fetch('/data.json')
 
         const timeframeOptions = document.querySelectorAll('.timeframe-selector__option');
         timeframeOptions.forEach(timeframeOption => timeframeOption.addEventListener('click', onTimeframeClick(activities)));
+
+        const activeTimeframeOption = document.querySelector('.timeframe-selector__option[data-value="daily"]');
+        activeTimeframeOption.classList.add('timeframe-selector__option--selected');
     })
     .catch(error => {
         console.error('Error loading activity data:', error);
