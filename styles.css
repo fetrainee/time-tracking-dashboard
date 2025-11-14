@@ -266,6 +266,11 @@ body {
     display: block;
     width: 1.3125rem;
     height: 0.3125rem;
+    transition: filter 0.2s ease;
+}
+
+.activity-card__menu-button:hover .activity-card__menu-button-image {
+    filter: brightness(0) invert(1);
 }
 
 @media (min-width: 768px) {
