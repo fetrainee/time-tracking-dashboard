@@ -51,7 +51,10 @@ const renderActivities = (activity) => {
 }
 
 
-fetch('data.json')
+const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+const dataUrl = `${basePath}/data.json`;
+
+fetch(dataUrl)
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
