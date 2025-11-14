@@ -51,14 +51,20 @@ body {
 
 .dashboard {
     padding: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-areas:
+    "user-section"
+    "work"
+    "play"
+    "study"
+    "exercise"
+    "social"
+    "self-care";
     gap: var(--spacing-300);
 }
 
 .user-section {
+    grid-area: user-section;
     background-color: var(--color-navy-900);
     display: flex;
     justify-content: center;
@@ -138,26 +144,32 @@ body {
 }
 
 .activity-card--work {
+    grid-area: work;
     background-color: var(--color-orange-300);
 }
 
 .activity-card--play {
+    grid-area: play;
     background-color: var(--color-blue-300);
 }
 
 .activity-card--study {
+    grid-area: study;
     background-color: var(--color-pink-400);
 }
 
 .activity-card--exercise {
+    grid-area: exercise;
     background-color: var(--color-green-400);
 }
 
 .activity-card--social {
+    grid-area: social;
     background-color: var(--color-purple-700);
 }
 
 .activity-card--self-care {
+    grid-area: self-care;
     background-color: var(--color-yellow-300);
 }
 
