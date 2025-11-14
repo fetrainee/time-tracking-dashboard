@@ -313,6 +313,7 @@ body {
         "user-section exercise social self-care";
         grid-template-columns: repeat(4, 1fr);
         max-width: none;
+        gap: var(--spacing-400);
     }
 
     .timeframe-selector {
@@ -344,6 +345,14 @@ body {
 
     .timeframe-selector__option:hover {
         color: var(--color-white);
+    }
+
+    .activity-card {
+        min-width: 255px;
+    }
+
+    .activity-card__content {
+        padding: var(--spacing-400);
     }
 
     .activity-card__content:hover {
