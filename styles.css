@@ -266,3 +266,29 @@ body {
     width: 21px;
     height: 5px;
 }
+
+@media (min-width: 768px) {
+    .dashboard {
+        grid-template-areas:
+        "user-section user-section user-section"
+        "work play study"
+        "exercise social self-care";
+        max-width: 612px;
+        margin: 0 auto;
+    }
+
+    .user-profile {
+        width: 100%;
+        justify-content: normal;
+    }
+
+    .activity-card__stats {
+        flex-direction: column;
+        align-items: normal;
+    }
+
+    .activity-card__current-stats {
+        font-size: 56px;
+        line-height: 66px;
+    }
+}
