@@ -335,4 +335,12 @@ body {
         max-width: 10ch;
         word-break: break-word;
     }
+
+    .timeframe-selector__option:hover {
+        color: var(--color-white);
+    }
+
+    .activity-card__content:hover {
+        background-color: var(--color-navy-800);
+    }
 }
