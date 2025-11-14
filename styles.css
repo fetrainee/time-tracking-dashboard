@@ -292,3 +292,26 @@ body {
         line-height: 66px;
     }
 }
+
+@media (min-width: 1440px) {
+    .dashboard {
+        grid-template-areas:
+        "user-section work play study"
+        "user-section exercise social self-care";
+        grid-template-columns: repeat(4, 1fr);
+        max-width: none;
+    }
+
+    .timeframe-selector {
+        flex-direction: column;
+    }
+
+    .user-section {
+        justify-content: normal;
+    }
+
+    .user-profile {
+        flex-direction: column;
+        align-items: normal;
+    }
+}
