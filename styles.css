@@ -294,6 +294,13 @@ body {
 }
 
 @media (min-width: 1440px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .dashboard {
         grid-template-areas:
         "user-section work play study"
@@ -304,6 +311,14 @@ body {
 
     .timeframe-selector {
         flex-direction: column;
+        gap: 21px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .timeframe-selector__option {
+        text-align: left;
+        padding: 0 32px;
     }
 
     .user-section {
@@ -313,5 +328,11 @@ body {
     .user-profile {
         flex-direction: column;
         align-items: normal;
+    }
+
+    .user-profile__name {
+        display: inline-block;
+        max-width: 10ch;
+        word-break: break-word;
     }
 }
