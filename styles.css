@@ -25,12 +25,12 @@
 
     --color-grey-200: hsl(0, 0%, 85%);
 
-    --spacing-0: 0px;
-    --spacing-100: 8px;
-    --spacing-200: 16px;
-    --spacing-300: 24px;
-    --spacing-400: 32px;
-    --spacing-500: 40px;
+    --spacing-0: 0;
+    --spacing-100: 0.5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
 
     --font-weight-light: 300;
     --font-weight-regular: 400;
@@ -50,7 +50,7 @@ body {
 }
 
 .dashboard {
-    padding: 24px;
+    padding: 1.5rem;
     display: grid;
     grid-template-areas:
     "user-section"
@@ -84,23 +84,23 @@ body {
 }
 
 .user-profile__image {
-    width: 64px;
-    height: 64px;
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
 }
 
 .user-profile__label {
     color: var(--color-navy-200);
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: var(--font-weight-light);
-    line-height: 18px;
+    line-height: 1.125rem;
 }
 
 .user-profile__name {
     color: var(--color-white);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: var(--font-weight-light);
-    line-height: 28px;
+    line-height: 1.75rem;
 }
 
 .user-profile__info {
@@ -177,10 +177,10 @@ body {
 .activity-card::after {
     content: '';
     position: absolute;
-    width: 78px;
-    height: 78px;
-    top: -10px;
-    right: 20px;
+    width: 4.875rem;
+    height: 4.875rem;
+    top: -0.625rem;
+    right: 1.25rem;
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -229,9 +229,9 @@ body {
 
 .activity-card__title {
     color: var(--color-white);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: var(--font-weight-medium);
-    line-height: 21px;
+    line-height: 1.3125rem;
 }
 
 .activity-card__stats {
@@ -242,16 +242,16 @@ body {
 
 .activity-card__current-stats {
     color: var(--color-white);
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: var(--font-weight-light);
-    line-height: 38px;
+    line-height: 2.375rem;
 }
 
 .activity-card__previous-stats {
     color: var(--color-navy-200);
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: var(--font-weight-regular);
-    line-height: 18px;
+    line-height: 1.125rem;
 }
 
 .activity-card__menu-button {
@@ -263,8 +263,8 @@ body {
 
 .activity-card__menu-button-image {
     display: block;
-    width: 21px;
-    height: 5px;
+    width: 1.3125rem;
+    height: 0.3125rem;
 }
 
 @media (min-width: 768px) {
@@ -273,7 +273,7 @@ body {
         "user-section user-section user-section"
         "work play study"
         "exercise social self-care";
-        max-width: 612px;
+        max-width: 38.25rem;
         margin: 0 auto;
     }
 
@@ -288,8 +288,8 @@ body {
     }
 
     .activity-card__current-stats {
-        font-size: 56px;
-        line-height: 66px;
+        font-size: 3.5rem;
+        line-height: 4.125rem;
     }
 }
 
@@ -311,14 +311,14 @@ body {
 
     .timeframe-selector {
         flex-direction: column;
-        gap: 21px;
+        gap: 1.3125rem;
         margin-top: auto;
         margin-bottom: auto;
     }
 
     .timeframe-selector__option {
         text-align: left;
-        padding: 0 32px;
+        padding: 0 2rem;
     }
 
     .user-section {
